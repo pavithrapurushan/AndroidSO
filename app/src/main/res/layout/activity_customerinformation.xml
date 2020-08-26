@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom|top">
+
+        <LinearLayout
+            android:id="@+id/llCustInfoToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/activity_bg_color"
+            android:gravity="center_vertical"
+            android:paddingRight="10px"
+            android:paddingLeft="10px">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvStoreName"
+                android:text=""
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_weight="0.6"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDate"
+                android:text="22/08/2020"
+                android:textColor="@color/black"
+                android:layout_weight="0.4"
+                android:textStyle="bold"
+                android:gravity="right"/>
+        </LinearLayout>
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll1">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20px">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Cust Code"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/etCustCode"
+                        android:textColor="@color/custinfo_edittext_color"
+                        android:singleLine="true"
+                        android:hint="Enter your Customer ID"/>
+                    <ImageButton
+                        android:id="@+id/imgBtnSearchbyCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_search"
+                        android:layout_alignRight="@+id/etCustCode"
+                        android:layout_centerVertical="true"
+                        android:background="@null"/>
+                </RelativeLayout>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="HUID"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/etHUID"
+                        android:singleLine="true"
+                        android:textColor="@color/custinfo_edittext_color"
+                        android:hint="Enter HUID"/>
+                    <ImageButton
+                        android:id="@+id/imgBtnSearchbyHUID"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_search"
+                        android:layout_alignRight="@+id/etHUID"
+                        android:layout_centerVertical="true"
+                        android:background="@null"/>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Customer Name"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etCustomerName"
+                    android:textColor="@color/custinfo_edittext_color"
+                    android:hint="Enter Customer Name"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Customer Mobile"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etCustomerMobile"
+                    android:singleLine="true"
+                    android:textColor="@color/custinfo_edittext_color"
+                    android:hint="Enter Customer Mobile"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Address Line 1"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etAdrsline1"
+                    android:singleLine="true"
+                    android:textColor="@color/custinfo_edittext_color"
+                    android:hint="Enter Address line 1"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Address Line 2"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/etAdrsline2"
+                    android:singleLine="true"
+                    android:textColor="@color/custinfo_edittext_color"
+                    android:hint="Enter Address line 2"/>
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:id="@+id/llCustInfoBottombar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="15px"
+            android:background="@color/activity_bg_color">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Doctor"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical">
+                <!--<EditText-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:hint="Select Doctor"-->
+                    <!--android:id="@+id/etSearchDoctor"-->
+                    <!--android:textStyle="bold"/>-->
+                <AutoCompleteTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Select Doctor"
+                    android:id="@+id/acvSearchDoctor"
+                    android:textStyle="bold"/>
+                <ImageButton
+                    android:id="@+id/imgBtnSearchDoctor"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignRight="@+id/acvSearchDoctor"
+                    android:src="@drawable/ic_search"
+                    android:background="@null"/>
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                android:paddingTop="30px">
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnClear"
+                    android:text="CLEAR"
+                    android:textColor="@color/whites"
+                    android:layout_alignParentLeft="true"
+                    android:drawableLeft="@drawable/ic_clear_all_24px"
+                    android:drawablePadding="5px"
+                    android:background="@drawable/corners_round_btn"
+                    android:paddingLeft="15px"
+                    android:paddingRight="10px"/>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/btnCreateSO"
+                    android:text="CREATE SO   "
+                    android:textColor="@color/whites"
+                    android:drawableLeft="@drawable/ic_receipt_24px"
+                    android:drawablePadding="10px"
+                    android:paddingLeft="20px"
+                    android:paddingRight="10px"
+                    android:background="@drawable/corners_round_btn"
+                   android:layout_alignParentRight="true"/>
+
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

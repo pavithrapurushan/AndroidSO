@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/activity_bg_color">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:layout_marginTop="130px"
+            android:layout_marginLeft="30px"
+            android:textSize="@dimen/signin_heading_textsize"
+            android:textColor="@color/whites"
+            android:textStyle="bold"/>
+
+        <LinearLayout
+            android:id="@+id/ll1_Signin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerInParent="true"
+            android:paddingLeft="20px"
+            android:paddingRight="10px">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="USERNAME"
+                android:textColor="@color/whites"
+                android:textSize="@dimen/signin_tv_textsize"/>
+
+            <EditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter your username"
+                android:textColor="@color/whites"
+                android:backgroundTint="@color/whites"
+                android:textSize="@dimen/signin_edittext_textsize"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PASSWORD"
+                android:textColor="@color/whites"
+                android:textSize="@dimen/signin_tv_textsize"
+                android:layout_marginTop="25px"/>
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter password"
+                android:textColor="@color/whites"
+                android:backgroundTint="@color/whites"
+                android:textSize="@dimen/signin_edittext_textsize"/>
+
+        </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnLogin"
+        android:text="Login"
+        android:background="@drawable/corners_round_btn"
+        android:layout_below="@+id/ll1_Signin"
+        android:layout_marginTop="40px"
+        android:layout_marginLeft="20px"
+        android:textColor="@color/whites"/>
+
+    <TextView
+        android:id="@+id/tvForgotPswd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forgot Password?"
+        android:textColor="@color/black"
+        android:layout_below="@+id/btnLogin"
+        android:layout_margin="15px"
+        android:textStyle="italic"
+        android:layout_marginLeft="20px"/>
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imgBtnSettings"
+        android:src="@drawable/ic_settings_24px"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:background="@null"
+        android:layout_marginTop="10px"
+        android:layout_marginRight="10px"/>
+
+
+
+
+
+</RelativeLayout>

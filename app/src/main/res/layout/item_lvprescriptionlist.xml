@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20px"
+    android:background="#00FF00"
+    android:gravity="center_vertical">
+
+    <!--<LinearLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal"-->
+        <!--android:gravity="center_vertical">-->
+
+        <!--<ImageView-->
+            <!--android:id="@+id/imgViewPrescrptn"-->
+            <!--android:layout_width="0dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:src="@drawable/ic_insert_photo_24px"-->
+            <!--android:layout_weight="0.2"/>-->
+
+        <TextView
+            android:id="@+id/tvPrescrptnImageName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:text="dlhgfghfgh vhfghjghghgh"
+            android:textColor="@color/whites"
+            android:paddingRight="10px"/>
+
+        <ImageButton
+            android:id="@+id/imgBtnDeletePrescrptn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_baseline_close_24px"
+            android:layout_weight="0.1"
+            android:background="@null"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvFilePath"
+            android:text=""
+            android:layout_marginLeft="5px"
+            android:textColor="@color/black"
+            android:visibility="invisible"/>
+
+    <!--</LinearLayout>-->
+
+
+
+</LinearLayout>

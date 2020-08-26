@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:background="@color/activity_bg_color"
+       android:gravity="center"
+       android:id="@+id/llSettingsHeader">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_gravity="center"
+           android:text="Settings"
+           android:textColor="@color/whites"/>
+
+   </LinearLayout>
+
+   <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/llSettingsHeader"
+        android:layout_margin="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAppName"
+                android:text="App Name  "
+                android:textSize="@dimen/signin_tv_textsize"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_weight="0.3"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAppNameValue"
+                android:text=" : AndroidSO"
+                android:textSize="@dimen/signin_tv_textsize"
+                android:textColor="@color/black"
+                android:layout_weight="0.7"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAppVersion"
+                android:text="App Version  "
+                android:gravity="left"
+                android:layout_weight="0.3"
+                android:textSize="@dimen/signin_tv_textsize"
+                android:textColor="@color/black" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvAppVersionValue"
+                android:text=" : 0.0"
+                android:textSize="@dimen/signin_tv_textsize"
+                android:textColor="@color/black"
+                android:layout_weight="0.7"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDeviceId"
+                android:text="DeviceId "
+                android:textSize="@dimen/signin_tv_textsize"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_weight="0.3"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDeviceIdValue"
+                android:text=" : 1234567890"
+                android:textSize="@dimen/signin_tv_textsize"
+                android:textColor="@color/black"
+                android:layout_weight="0.7"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="5dp"
+
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvUrl"
+                android:text="URL "
+                android:textSize="@dimen/signin_tv_textsize"
+                android:textColor="@color/black"
+                android:gravity="left"
+                android:layout_weight="0.3"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvUrlValue"
+                android:text=" "
+                android:textSize="@dimen/signin_tv_textsize"
+                android:textColor="@color/black"
+                android:layout_weight="0.7"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Store Code"
+            android:layout_marginTop="30px"
+            android:textColor="@color/activity_bg_color"/>
+
+        <EditText
+            android:id="@+id/etStoreCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Email"
+            android:layout_marginTop="30px"
+            android:textColor="@color/activity_bg_color"/>
+
+        <EditText
+            android:id="@+id/etEmailId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:layout_marginTop="30px"
+            android:textColor="@color/activity_bg_color"/>
+
+        <EditText
+            android:id="@+id/etPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnRegister"
+            android:text="Register"
+            android:textColor="@color/whites"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/corners_round_btn"
+            android:layout_marginTop="5px"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvUsername"
+            android:text="USERNAME :"
+            android:textSize="36px"
+            android:gravity="center"
+            android:layout_marginTop="20px"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>

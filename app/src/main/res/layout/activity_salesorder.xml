@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/llSOToolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/activity_bg_color"
+            android:gravity="center_vertical"
+            android:paddingRight="20px"
+            android:paddingLeft="20px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvCustomerName"
+                android:text=""
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:layout_weight="0.6"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvDate"
+                android:text="24/08/2020"
+                android:textColor="@color/black"
+                android:layout_weight="0.4"
+                android:textStyle="bold"
+                android:gravity="right"/>
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="25px"
+                android:paddingRight="25px"
+                android:paddingTop="15px"
+                android:paddingBottom="15px">
+
+                <EditText
+                    android:id="@+id/etMedicineSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/et_roundedbox_bg"/>
+                <ImageButton
+                    android:id="@+id/imgBtnSearchItem"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_search"
+                    android:layout_alignRight="@+id/etMedicineSearch"
+                    android:background="@null"
+                    android:layout_centerVertical="true"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10px"
+                android:background="@color/activity_bg_color">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="#"
+                        android:textColor="@color/black"
+                        android:layout_weight="0.1"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.8"
+                        android:layout_height="wrap_content"
+                        android:text="Product Name"
+                        android:textColor="@color/black"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--.2 .3 .4 .1-->
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.2"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="MRP"/>
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.3"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="QTY"
+                        android:gravity="center"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.4"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:gravity="center"
+                        android:text="Total"/>
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_weight="0.1"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:text="Note"/>
+
+
+                </LinearLayout>
+            </LinearLayout>
+            <!--</LinearLayout>-->
+
+
+            <ListView
+                android:id="@+id/lvProductlist"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll1"
+                android:layout_marginBottom="15px">
+            </ListView>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+        <LinearLayout
+            android:id="@+id/llSOBottombar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="15px"
+            android:background="@color/activity_bg_color">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.7"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20px">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imgBtnRemarksPrescrptn"
+                        android:src="@drawable/ic_remarks_prescrptn"
+                        android:background="@null"
+                        android:layout_centerVertical="true"/>
+                    <Button
+                        android:id="@+id/btnAddPrescription"
+                        android:layout_width="400px"
+                        android:layout_height="60px"
+                        android:layout_centerHorizontal="true"
+                        android:text="Add Prescription"
+                        android:textSize="24px"
+                        android:textColor="@color/whites"
+                        android:background="@drawable/corners_round_btn"
+                        android:drawableLeft="@drawable/ic_addprescriptn_24px_2"
+                        android:padding="10px"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvNoOfPrescrptnsAdded"
+                        android:text="2"
+                        android:textColor="@color/black"
+                        android:layout_toLeftOf="@+id/imgBtnContentCopy"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="5px"/>
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imgBtnContentCopy"
+                        android:src="@drawable/ic_content_copy_24px"
+                        android:background="@null"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10px">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvToken"
+                        android:text="Token:"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvTokenValue"
+                        android:text="400/20/SO-193"
+                        android:background="#4A7BCB"
+                        android:padding="15px"
+                        android:textColor="@color/whites"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10px">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAmount"
+                        android:text="Amount:"
+                        android:textStyle="bold"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/tvAmountValue"
+                        android:text="375.61"
+                        android:background="#4A7BCB"
+                        android:textColor="@color/whites"
+                        android:layout_alignParentRight="true"
+                        android:padding="15px"/>
+                </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="0.3"
+                android:orientation="vertical"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:padding="10px">
+
+                <Button
+                    android:layout_width="300px"
+                    android:layout_height="90px"
+                    android:id="@+id/btnNew"
+                    android:text="NEW"
+                    android:paddingLeft="15px"
+                    android:drawablePadding="5px"
+                    android:textColor="@color/whites"
+                    android:background="@drawable/corners_round_btn"
+                    android:drawableLeft="@drawable/ic_add_24px"/>
+
+                <Button
+                    android:layout_width="300px"
+                    android:layout_height="90px"
+                    android:id="@+id/btnSave"
+                    android:text="SAVE"
+                    android:background="@drawable/corners_round_btn"
+                    android:drawableLeft="@drawable/ic_save_24px"
+                    android:paddingLeft="15px"
+                    android:layout_marginTop="20px"
+                    android:drawablePadding="5px"
+                    android:textColor="@color/whites"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dialogwindow_bg"
+    android:paddingLeft="20px"
+    android:paddingRight="20px">
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="31.33px"
+        android:layout_marginTop="39.33px"
+        android:background="@drawable/ic_baseline_close_24px"
+        android:id="@+id/imgBtnCloseQtySelection"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvSelectedItemName"
+        android:text=""
+        android:textColor="@color/whites"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="30px"
+        android:textSize="56px"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:layout_marginTop="10px"
+        android:layout_marginLeft="20px"
+        android:background="@drawable/whiteline"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="20px">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvMrpInQtySelection"
+            android:text="MRP : "
+            android:textColor="@color/whites"
+            android:layout_alignParentLeft="true"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tvUperpackInQtySelection"
+            android:text="UPerPack : "
+            android:textColor="@color/whites"
+            android:layout_alignParentRight="true"/>
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="10px"
+        android:layout_marginTop="20px"
+        android:layout_marginLeft="20px"
+        android:background="@drawable/whiteline"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginLeft="20px"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="60px">
+
+        <TextView
+            android:id="@+id/tvPacks"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.7"
+            android:text="Packs:"
+            android:textStyle="bold"
+            android:textColor="@color/whites" />
+
+        <LinearLayout
+            android:id="@+id/llPacks"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:background="@color/whites"
+            android:orientation="horizontal"
+            android:padding="15px">
+
+            <ImageButton
+                android:id="@+id/imgBtnMinusPack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:src="@drawable/ic_remove_circle_outline_24px"
+                android:background="@null"/>
+            <EditText
+                android:id="@+id/etQtyInPacks"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:text="1"
+                android:inputType="numberDecimal"
+                android:background="@drawable/et_roundedbox_bg"/>
+            <ImageButton
+                android:id="@+id/imgBtnPlusPack"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:src="@drawable/ic_add_circle_outline_24px"
+                android:background="@null"/>
+        </LinearLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="20px"
+        android:layout_marginTop="40px">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Units:"
+            android:textColor="@color/whites"
+            android:textStyle="bold"
+            android:layout_weight="0.7"/>
+
+        <LinearLayout
+            android:id="@+id/llUnits"
+            android:layout_width="0dp"
+            android:layout_weight="0.3"
+            android:layout_height="wrap_content"
+            android:background="@color/whites"
+            android:orientation="horizontal"
+            android:padding="15px">
+
+            <ImageButton
+                android:id="@+id/imgBtnMinusUnits"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:src="@drawable/ic_remove_circle_outline_24px"
+                android:background="@null"/>
+            <EditText
+                android:id="@+id/etQtyInUnits"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.4"
+                android:gravity="center"
+                android:text="0"
+                android:inputType="numberDecimal"
+                android:background="@drawable/et_roundedbox_bg"/>
+            <ImageButton
+                android:id="@+id/imgBtnPlusUnits"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.3"
+                android:src="@drawable/ic_add_circle_outline_24px"
+                android:background="@null"/>
+        </LinearLayout>
+    </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60px"
+            android:layout_marginLeft="20px">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvQtyInUnits_qtySelection"
+                android:text="Qty in Units: "
+                android:textColor="@color/whites"
+                android:layout_alignParentLeft="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tvTotalAmt_QtySelection"
+                android:text="Total Amount: "
+                android:textColor="@color/whites"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btnAddItem_qtySelection"
+            android:layout_width="wrap_content"
+            android:layout_height="76px"
+            android:layout_gravity="right"
+            android:text="ADD"
+            android:textColor="@color/whites"
+            android:background="@drawable/qty_addbtn_bg"
+            android:drawableLeft="@drawable/ic_add_24px"
+            android:paddingLeft="20px"
+            android:layout_marginTop="80px"/>
+
+
+
+
+</LinearLayout>
