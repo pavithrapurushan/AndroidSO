@@ -7,10 +7,14 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.preference.PreferenceManager;
+import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.widget.Toast;
 
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -40,25 +44,111 @@ public class TsCommonMethods {
 
     public boolean isNetworkConnected() {
 
-        ConnectivityManager cm = (ConnectivityManager) CurrentContext.getSystemService(CurrentContext.CONNECTIVITY_SERVICE);
+        try {
+            ConnectivityManager cm = (ConnectivityManager) CurrentContext.getSystemService(CurrentContext.CONNECTIVITY_SERVICE);
 
-        NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
-        if (wifiNetwork != null && wifiNetwork.isConnected()) {
-            return true;
-        }
+            NetworkInfo wifiNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+            if (wifiNetwork != null && wifiNetwork.isConnected()) {
+                return true;
+            }
 
-        NetworkInfo mobileNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
-        if (mobileNetwork != null && mobileNetwork.isConnected()) {
-            return true;
-        }
+            NetworkInfo mobileNetwork = cm.getNetworkInfo(ConnectivityManager.TYPE_MOBILE);
+            if (mobileNetwork != null && mobileNetwork.isConnected()) {
+                return true;
+            }
 
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
-        if (activeNetwork != null && activeNetwork.isConnected()) {
-            return true;
+            NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+            if (activeNetwork != null && activeNetwork.isConnected()) {
+                return true;
+            }
+        }catch (Exception ex) {
+            Toast.makeText(CurrentContext, "" + ex, Toast.LENGTH_SHORT).show();
         }
 
         return false;
     }
+
+//    public String GetDeviceUniqueId() {
+//
+//        String DeviceUniqueId = "";
+//        String StoreIdentifier = "", WSUrl = "";
+//
+//        TelephonyManager TelephoneManager1;
+//        TelephoneManager1 = (TelephonyManager) CurrentContext.getSystemService(CurrentContext.TELEPHONY_SERVICE);
+//        if (ActivityCompat.checkSelfPermission(CurrentContext, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+//
+//            ActivityCompat.requestPermissions((Activity)CurrentContext, new String[]{Manifest.permission.READ_PHONE_STATE}, MY_PERMISSIONS_REQUEST_READ_PHONE_STATE);
+//
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+////            return TODO;
+//        }
+//
+//        if (ActivityCompat.checkSelfPermission(CurrentContext, Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//
+//            ActivityCompat.requestPermissions((Activity) CurrentContext, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_WRITE_STORAGE);
+//
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+////            return TODO;
+//        }
+//
+//        if (ActivityCompat.checkSelfPermission(CurrentContext, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+//
+//            ActivityCompat.requestPermissions((Activity) CurrentContext, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_STORAGE);
+//
+//            // TODO: Consider calling
+//            //    ActivityCompat#requestPermissions
+//            // here to request the missing permissions, and then overriding
+//            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+//            //                                          int[] grantResults)
+//            // to handle the case where the user grants the permission. See the documentation
+//            // for ActivityCompat#requestPermissions for more details.
+////            return TODO;
+//        }
+//
+//        DeviceUniqueId = TelephoneManager1.getDeviceId();
+//
+//        if(DeviceUniqueId == null || DeviceUniqueId.length() == 0 ) {
+//
+//            SharedPreferences sharedPrefs1 = PreferenceManager.getDefaultSharedPreferences(CurrentContext);
+//            DeviceUniqueId = sharedPrefs1.getString("StoredDevId","");
+//            StoreIdentifier = sharedPrefs1.getString("StoreIdf","");
+//            WSUrl = sharedPrefs1.getString("WSUrl","");
+//
+//            Log.d("MSAPP", "Taking From SharedPreferences");
+//            //Toast.makeText(CurrentContext,"Taking From SharedPreferences", Toast.LENGTH_SHORT).show();
+//        }
+//
+//        if(DeviceUniqueId == null || DeviceUniqueId.length() == 0 ) {
+//            String strUUID  = String.valueOf( UUID.randomUUID());
+//            strUUID = strUUID.replace("-", "");
+//            DeviceUniqueId = strUUID.substring(0,15).toUpperCase();
+//
+//            Log.d("MSAPP", "Taking From UUID");
+//        }
+//
+//        Log.d("MSAPP", "DeviceUniqueId : " + DeviceUniqueId);
+//        Log.d("MSAPP", "StoreIdentifier : " + StoreIdentifier);
+//        Log.d("MSAPP", "WSUrl : " + WSUrl);
+//
+//        //Toast.makeText(CurrentContext,"DeviceUniqueId : " + DeviceUniqueId, Toast.LENGTH_SHORT).show();
+//        //Toast.makeText(CurrentContext,"StoreIdentifier : " + StoreIdentifier, Toast.LENGTH_SHORT).show();
+//        //Toast.makeText(CurrentContext,"WSUrl : " + WSUrl, Toast.LENGTH_SHORT).show();
+//
+//        return DeviceUniqueId;
+//    }
+
 
     public String GetDeviceUniqueId() {
 
@@ -108,6 +198,37 @@ public class TsCommonMethods {
             // for ActivityCompat#requestPermissions for more details.
 //            return TODO;
         }
+
+
+//        String myuniqueID;
+//        int myversion = Integer.valueOf(android.os.Build.VERSION.SDK);
+//        if (myversion < 23) {
+//            WifiManager manager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
+//            WifiInfo info = manager.getConnectionInfo();
+//            myuniqueID = info.getMacAddress();
+//            if (myuniqueID == null) {
+//                TelephonyManager mngr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+//                if (ActivityCompat.checkSelfPermission(CurrentContext, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+//                    return;
+//                }
+//                myuniqueID = mngr.getDeviceId();
+//            }
+//        }
+//        else if (myversion > 23 && myversion < 29) {
+//            TelephonyManager mngr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+//            if (ActivityCompat.checkSelfPermission(CurrentContext, android.Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+//                return;
+//            }
+//            myuniqueID= mngr.getDeviceId();
+//        }
+//        else {
+//            String androidId = Settings.Secure.getString(this.getContentResolver(),
+//                    myuniqueID= androidId;
+//        }
+
+
+
+
 
         DeviceUniqueId = TelephoneManager1.getDeviceId();
 
